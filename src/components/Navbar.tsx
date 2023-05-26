@@ -10,6 +10,8 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { navData } from "~/utils/navData";
+import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -64,11 +66,17 @@ const Navbar = () => {
             <FontAwesomeIcon className="text-gray-700" icon={faHouse} />
             <span>{navData[0]?.text}</span>
           </Link>
-          <div className="flex gap-10">
+          <div className="flex items-center gap-10">
             {navData.map((item) => {
-              if (item.specialItem && item.id > 1) {
-                return <li key={item.id}>{item.text}</li>;
+              //return dark/light switcher and language switcher
+              if (item.id === 2) {
+                return <ThemeSwitcher key={item.id} setIsOpen={setIsOpen} />;
               }
+              if (item.id === 3) {
+                return <LanguageSwitcher key={item.id} />;
+              }
+
+              //return rest of nav data
               if (!item.specialItem && item.id > 2) {
                 return (
                   <Link
