@@ -52,22 +52,24 @@ const LanguageSwitcher = () => {
     >
       <div className="flex items-center justify-start gap-2 rounded-lg  px-2 duration-200">
         <img src={flag} alt="english" />
-        <span>{language}</span>
+        <span className="text-gray-700 dark:text-gray-100">{language}</span>
       </div>
       <ul
         className={`fixed duration-100 ${
           open ? " scale-100" : "scale-0"
-        } z-[999] flex w-40 flex-col gap-4 overflow-hidden rounded-md bg-gradient-to-br from-gray-300  to-slate-600 capitalize dark:from-slate-800 dark:to-neutral-800`}
+        } z-[999] flex w-40 flex-col gap-4 overflow-hidden rounded border-[1px] border-slate-300  bg-gradient-to-br from-gray-100 to-gray-200 capitalize dark:border-slate-600 dark:from-slate-900 dark:to-slate-700`}
       >
         {countries.map((country: Country) => {
           return (
             <li
               key={country.id}
               onClick={() => handleClick(country)}
-              className="z-50 flex w-[90%] items-center justify-start gap-2 rounded p-3 duration-200 hover:translate-x-1 hover:bg-gray-300 dark:hover:bg-zinc-900"
+              className="z-50 flex w-[90%] items-center justify-start gap-2 rounded p-3 duration-200 hover:translate-x-1 hover:bg-gray-300 dark:hover:bg-gray-600"
             >
               <img src={country.flag} alt={country.name[language]} />
-              <span className="text-">{country.name[language]}</span>
+              <span className="text-gray-700 dark:text-gray-100">
+                {country.name[language]}
+              </span>
             </li>
           );
         })}
