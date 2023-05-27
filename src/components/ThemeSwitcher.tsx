@@ -1,3 +1,5 @@
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import type { ThemeSwitcherProps } from "~/interfaces/interfaces";
 
@@ -19,18 +21,18 @@ const ThemeSwitcher = ({ setIsOpen }: ThemeSwitcherProps) => {
   return (
     <div
       onClick={handleSelect}
-      className="flex cursor-pointer rounded-full transition-colors"
+      className="flex w-10 cursor-pointer rounded-full  p-1 transition-colors"
     >
       <div
-        className={`${
-          isSelected === "dark" ? "translate-x-full " : "translate-x-0 "
-        } flex items-center justify-center transition-all duration-300 ease-in-out`}
+        className={`flex items-center justify-center  transition-all duration-300 ease-in-out
+        ${isSelected === "dark" ? "translate-x-full " : "translate-x-0 "}`}
       >
-        <i
-          className={`${
-            isSelected === "dark" ? "fa-solid fa-moon" : "fa-solid fa-sun"
-          }  text-xl`}
-        ></i>
+        <FontAwesomeIcon
+          icon={isSelected === "dark" ? faMoon : faSun}
+          className={`text-2xl ${
+            isSelected === "dark" ? "text-slate-300" : "text-yellow-500"
+          }`}
+        />
       </div>
     </div>
   );
