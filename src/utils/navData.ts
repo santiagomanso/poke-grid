@@ -6,64 +6,65 @@ import {
   faBolt,
   type IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
+import { type navItems } from "~/interfaces/interfaces";
 
-interface navDataI {
-  id: number;
-  icon: IconDefinition | boolean;
-  text: string | boolean;
-  href: string;
-  specialItem: boolean;
-}
+// interface navDataI {
+//   id: number;
+//   icon: IconDefinition | boolean;
+//   text: string | boolean;
+//   href: string;
+//   specialItem: boolean;
+// }
 
-type navDataArr = navDataI[];
+type navDataArr = navItems[];
 
 export const navData: navDataArr = [
   {
     id: 1,
     icon: faHouse,
-    text: "home",
+    text: { en: "home", es: "inicio", de: "Startseite" },
     href: "/",
     specialItem: false,
   },
   {
     id: 2,
     icon: false,
-    text: "dark/light",
+    text: { en: "dark/light", es: "dark/light", de: "dark/light" },
     href: "",
     specialItem: true,
   },
   {
     id: 3,
     icon: false,
-    text: "language",
+    text: { en: "language", es: "idioma", de: "sprache" },
     href: "",
     specialItem: true,
   },
   {
     id: 4,
     icon: faCircleInfo,
-    text: "faq",
+    text: { en: "how to play", es: "como jugar", de: "Spielweise" },
     href: "/faq",
     specialItem: false,
   },
   {
     id: 5,
     icon: faBolt,
-    text: "grid",
+    text: { en: "grid", es: "red", de: "Stromnetz" },
     href: "/grid",
     specialItem: false,
   },
   {
     id: 6,
     icon: faListUl,
-    text: "pokemons",
+    text: { en: "pokemons", es: "pokemones", de: "pokemons" },
     href: "/pokemons",
     specialItem: false,
   },
   {
     id: 7,
     icon: faIdCard,
-    text: "profile",
+    text: { en: "profile", es: "mi perfil", de: "main Profil" },
     href: "/profile",
     specialItem: false,
   },
