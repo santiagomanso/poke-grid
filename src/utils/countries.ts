@@ -1,16 +1,4 @@
-export interface Country {
-  id: number;
-  name: {
-    [index: string]: string;
-    en: string;
-    es: string;
-    de: string;
-  };
-  flag: string;
-  language: "en" | "de" | "es";
-}
-
-export type Countries = Country[];
+import { type Countries } from "~/interfaces/interfaces";
 
 export const countries: Countries = [
   {
