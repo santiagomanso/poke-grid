@@ -26,6 +26,9 @@ const initialContext: languageContextI = {
       //home page
       welcome: "Welcome to the PoKeGrid",
       greenEnergy: "Green energy by pokemons",
+      description:
+        "PoKeGrid empowers you to transform your power grid into a dynamic network fueled by the incredible skills of electric-type Pokémon. Picture Pikachu unleashing its signature Thunderbolt attack, channeling a surge of sustainable energy directly into your home's electrical system. Meanwhile, Electabuzz utilizes its electrifying Thunder Punch to supercharge your electric vehicle, providing a thrilling and eco-conscious mode of transportation.",
+      toTheGrid: "to the grid",
     },
     es: {
       //navbar
@@ -41,6 +44,9 @@ const initialContext: languageContextI = {
       //home page
       welcome: "Bienvenido a PoKeGrid",
       greenEnergy: "Energía verde por pokemones",
+      description:
+        "PoKeGrid empowers you to transform your power grid into a dynamic network fueled by the incredible skills of electric-type Pokémon. Picture Pikachu unleashing its signature Thunderbolt attack, channeling a surge of sustainable energy directly into your home's electrical system. Meanwhile, Electabuzz utilizes its electrifying Thunder Punch to supercharge your electric vehicle, providing a thrilling and eco-conscious mode of transportation.",
+      toTheGrid: "to the grid",
     },
     de: {
       //navbar - component
@@ -56,6 +62,9 @@ const initialContext: languageContextI = {
       //home page
       welcome: "Willkommen bei Pokegrid",
       greenEnergy: "Grüne Energie von Pokemon",
+      description:
+        "PoKeGrid empowers you to transform your power grid into a dynamic network fueled by the incredible skills of electric-type Pokémon. Picture Pikachu unleashing its signature Thunderbolt attack, channeling a surge of sustainable energy directly into your home's electrical system. Meanwhile, Electabuzz utilizes its electrifying Thunder Punch to supercharge your electric vehicle, providing a thrilling and eco-conscious mode of transportation.",
+      toTheGrid: "to the grid",
     },
   },
   flag: "",
