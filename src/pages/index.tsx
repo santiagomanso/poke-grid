@@ -13,8 +13,6 @@ import { LanguageContext } from "~/context/LanguageContext";
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const { text, language } = useContext(LanguageContext);
-  console.log("text", text);
-  console.log("language", language);
   return (
     <>
       <Head>

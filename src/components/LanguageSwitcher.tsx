@@ -14,7 +14,7 @@ const LanguageSwitcher = () => {
     useContext<languageContextI>(LanguageContext);
 
   const handleClick = (country: Country) => {
-    const selectedLanguage = country.language ?? "";
+    const selectedLanguage = country.language ?? "en";
     changeLanguage(
       country.flag,
       country.language,
