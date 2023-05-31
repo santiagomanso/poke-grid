@@ -65,7 +65,7 @@ export interface Country {
     de: string;
   };
   flag: string;
-  language: keyof locales;
+  language: "en" | "de" | "es";
 }
 
 export type Countries = Country[];
