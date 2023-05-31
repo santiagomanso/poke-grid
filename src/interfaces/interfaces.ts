@@ -32,19 +32,6 @@ export interface languageContextI {
   setName?: (arg: string) => void;
   changeLanguage: strstrstrToVoid;
 }
-
-export interface Country {
-  id: number;
-  name: {
-    [index: string]: string;
-    en: string;
-    es: string;
-    de: string;
-  };
-  flag: string;
-  language: "en" | "de" | "es";
-}
-
 export interface LanguageText {
   home: string;
   howToPlay: string;
@@ -60,11 +47,28 @@ export interface LanguageText {
   toTheGrid: string;
   // Add other translation keys and their respective types if needed
 }
-
 export interface Dictionary {
-  [index: string]: LanguageText;
+  [index: string]: object;
+}
+export interface locales {
+  en: string;
+  de: string;
+  es: string;
 }
 
+export interface Country {
+  id: number;
+  name: {
+    [index: string]: string;
+    en: string;
+    es: string;
+    de: string;
+  };
+  flag: string;
+  language: keyof locales;
+}
+
+export type Countries = Country[];
 // THEME SWITCHER
 export interface ThemeSwitcherProps {
   setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
