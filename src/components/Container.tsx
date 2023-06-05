@@ -8,7 +8,7 @@ interface containerI {
 const Container = ({ children, flex, row, coins }: containerI) => {
   return (
     <main
-      className={`h-3/4 w-full max-w-[90rem] rounded bg-white shadow-md shadow-gray-500 transition-colors duration-1000 ease-in-out dark:bg-gradient-to-br dark:from-slate-700 dark:to-slate-800 dark:shadow-none
+      className={`h-3/4 w-full max-w-[90rem] rounded bg-gradient-to-br from-white to-white shadow-md shadow-gray-700 transition-colors duration-1000 ease-in-out dark:bg-gradient-to-br dark:from-slate-700 dark:to-slate-800 dark:shadow-none
       ${flex ? "flex" : ""}
       ${row ? "flex-row" : ""}
       ${coins ? "relative" : ""}
