@@ -9,16 +9,16 @@ const GridHud = () => {
         alt=""
         className="h-full"
       />
-      <span className="absolute left-[10%] top-[60%] rounded-lg border-2 bg-slate-700 px-3 py-2 text-2xl text-white">
+      <span className="absolute left-[10%] top-[60%] rounded-lg border-2 border-slate-900 bg-slate-300 px-3 py-2 text-2xl text-gray-600 dark:border-slate-200 dark:bg-slate-800 dark:text-white">
         0kw
       </span>
-      <span className="absolute left-[30%] top-[75%] rounded-lg border-2 bg-slate-700 px-3 py-2 text-2xl text-white">
+      <span className="absolute left-[30%] top-[75%] rounded-lg border-2 border-slate-900 bg-slate-300 px-3 py-2 text-2xl text-gray-600 dark:border-slate-200 dark:bg-slate-800 dark:text-white">
         10kw
       </span>
-      <span className="absolute left-[70%] top-[75%] rounded-lg border-2 bg-slate-700 px-3 py-2 text-2xl text-white">
+      <span className="absolute left-[70%] top-[75%] rounded-lg border-2 border-slate-900 bg-slate-300 px-3 py-2 text-2xl text-gray-600 dark:border-slate-200 dark:bg-slate-800 dark:text-white">
         10kw
       </span>
-      <span className="absolute left-[73%] top-[25%] rounded-lg border-2 bg-slate-700 px-3 py-2 text-2xl text-white">
+      <span className="absolute left-[73%] top-[25%] rounded-lg border-2 border-slate-900 bg-slate-300 px-3 py-2 text-2xl text-gray-600 dark:border-slate-200 dark:bg-slate-800 dark:text-white">
         0kw
       </span>
 
@@ -33,11 +33,14 @@ const GridHud = () => {
             />
           </div>
         </div>
-        <button className="flex items-center gap-1 rounded-md border-2 border-violet-500 bg-gradient-to-br from-indigo-500 to-rose-300 px-6 py-2 transition-all duration-150 ease-in-out active:translate-y-2 dark:border-neutral-400 dark:from-gray-100 dark:to-gray-200">
-          <span className="font-medium uppercase text-gray-100 dark:text-gray-600">
+        <button className="flex items-center gap-1 rounded-md border-2 border-violet-500 bg-gradient-to-br from-indigo-500 to-rose-300 px-6 py-2 transition-all duration-150 ease-in-out active:translate-y-2 dark:border-yellow-900 dark:from-yellow-400 dark:to-amber-700">
+          <span className="font-medium uppercase tracking-wider text-white">
             impact trueno
           </span>
-          <FontAwesomeIcon icon={faBolt} className="text-xl text-yellow-600" />
+          <FontAwesomeIcon
+            icon={faBolt}
+            className="text-xl text-yellow-600 dark:text-white"
+          />
         </button>
       </div>
     </>
