@@ -14,25 +14,6 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const { text, language } = useContext(LanguageContext);
 
-  interface Pokemon {
-    name: string;
-    // Add other properties based on the response structure
-  }
-
-  useEffect(() => {
-    const fetchData = () => {
-      try {
-        const response = fetch("https://pokeapi.co/api/v2/type/electric")
-          .then((data) => data.json())
-          .then((res: unknown) => console.log("res", res));
-      } catch (error) {
-        // Handle the error
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
   return (
     <>
       <Head>
