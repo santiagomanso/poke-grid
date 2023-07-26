@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
+  faBolt,
   faCircleInfo,
   faClose,
   faHouse,
+  faIdCard,
   faListUl,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
@@ -13,10 +15,15 @@ import { navData } from "~/utils/navData";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { LanguageContext } from "~/context/LanguageContext";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { language, text } = useContext(LanguageContext);
+
+  //user from clerk
+  const user = useUser();
+
   return (
     <>
       {/* phones/tablets */}
@@ -74,34 +81,54 @@ const Navbar = () => {
             </span>
           </Link>
           <div className="flex items-center gap-10">
-            {navData.map((item) => {
-              //return dark/light switcher and language switcher
-              if (item.id === 2) {
-                return <ThemeSwitcher key={item.id} setIsOpen={setIsOpen} />;
-              }
-              if (item.id === 3) {
-                return <LanguageSwitcher key={item.id} />;
-              }
+            <ThemeSwitcher setIsOpen={setIsOpen} />
+            <LanguageSwitcher />
+            <Link href="/howtoplay" className="flex items-center gap-1">
+              <FontAwesomeIcon
+                className="text-gray-700 dark:text-gray-100"
+                icon={faCircleInfo}
+              />
 
-              //return rest of nav data
-              if (!item.specialItem && item.id > 2) {
-                return (
-                  <Link
-                    key={item.id}
-                    href={item.href}
-                    className="flex items-center gap-1"
-                  >
-                    <FontAwesomeIcon
-                      className="text-gray-700 dark:text-gray-100"
-                      icon={item.icon}
-                    />
-                    <span className="text-gray-700 dark:text-gray-100">
-                      {item.text[language]}
-                    </span>
-                  </Link>
-                );
-              }
-            })}
+              <span className="text-gray-700 dark:text-gray-100">
+                {text.howToPlay}
+              </span>
+            </Link>
+            <Link href="/grid" className="flex items-center gap-1">
+              <FontAwesomeIcon
+                className="text-gray-700 dark:text-gray-100"
+                icon={faBolt}
+              />
+
+              <span className="text-gray-700 dark:text-gray-100">
+                {text.toTheGrid}
+              </span>
+            </Link>
+            <Link href="/pokemons" className="flex items-center gap-1">
+              <FontAwesomeIcon
+                className="text-gray-700 dark:text-gray-100"
+                icon={faListUl}
+              />
+
+              <span className="text-gray-700 dark:text-gray-100">
+                {text.pokemons}
+              </span>
+            </Link>
+            {user.isSignedIn ? (
+              <UserButton />
+            ) : (
+              <SignInButton mode="modal">
+                <div className="flex cursor-pointer items-center gap-1">
+                  <FontAwesomeIcon
+                    className="text-gray-700 dark:text-gray-100"
+                    icon={faIdCard}
+                  />
+
+                  <button className="btn text-gray-700 dark:text-gray-100">
+                    {text.login}
+                  </button>
+                </div>
+              </SignInButton>
+            )}
           </div>
         </ul>
       </nav>

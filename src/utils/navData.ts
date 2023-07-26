@@ -28,14 +28,12 @@ export const navData: navDataArr = [
   },
   {
     id: 2,
-    icon: false,
     text: { en: "dark/light", es: "dark/light", de: "dark/light" },
     href: "",
     specialItem: true,
   },
   {
     id: 3,
-    icon: false,
     text: { en: "language", es: "idioma", de: "sprache" },
     href: "",
     specialItem: true,
@@ -73,6 +71,6 @@ export const navData: navDataArr = [
     icon: faUser,
     text: { en: "sign in", es: "iniciar sesion", de: "Anmelden" },
     href: "/signIn",
-    specialItem: false,
+    specialItem: true,
   },
 ];
