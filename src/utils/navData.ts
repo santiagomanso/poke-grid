@@ -4,7 +4,7 @@ import {
   faListUl,
   faIdCard,
   faBolt,
-  type IconDefinition,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { type navItems } from "~/interfaces/interfaces";
 
@@ -66,6 +66,13 @@ export const navData: navDataArr = [
     icon: faIdCard,
     text: { en: "profile", es: "mi perfil", de: "main Profil" },
     href: "/profile",
+    specialItem: false,
+  },
+  {
+    id: 8,
+    icon: faUser,
+    text: { en: "sign in", es: "iniciar sesion", de: "Anmelden" },
+    href: "/signIn",
     specialItem: false,
   },
 ];
