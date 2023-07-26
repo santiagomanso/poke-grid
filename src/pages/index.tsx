@@ -5,15 +5,15 @@ import Container from "~/components/Container";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { api } from "~/utils/api";
+//import { api } from "~/utils/api";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { LanguageContext } from "~/context/LanguageContext";
 import { useUser } from "@clerk/nextjs";
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
-  const { text, language } = useContext(LanguageContext);
+  //const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { text } = useContext(LanguageContext);
 
   const user = useUser();
   console.log("user", user);
