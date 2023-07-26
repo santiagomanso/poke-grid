@@ -12,7 +12,6 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import Layout from "~/components/Layout";
 import { LanguageProvider } from "~/context/LanguageContext";
-import { UserProvider } from "~/context/UserContext";
 import { ClerkProvider } from "@clerk/nextjs";
 
 library.add(fas);
