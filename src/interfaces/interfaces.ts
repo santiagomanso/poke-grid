@@ -1,3 +1,4 @@
+import { type IconProp } from "@fortawesome/fontawesome-svg-core";
 import { type IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { type strstrstrToVoid } from "~/types/types";
 
@@ -9,7 +10,7 @@ export interface children {
 //navigation
 export interface navItems {
   id: number;
-  icon: IconDefinition | boolean;
+  icon?: IconProp;
   text: {
     [index: string]: string;
     en: string;
@@ -23,7 +24,7 @@ export interface navItems {
 //LANGUAGE
 export interface languageContextI {
   language: string;
-  text: Dictionary;
+  text: LanguageText;
   flag: string;
   name: string;
   setLanguage?: (arg: string) => void;
@@ -45,6 +46,7 @@ export interface LanguageText {
   greenEnergy: string;
   description: string;
   toTheGrid: string;
+  pokemons: string;
   // Add other translation keys and their respective types if needed
 }
 export interface Dictionary {
