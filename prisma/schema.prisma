@@ -19,3 +19,10 @@ model Users {
   password       String
   profilePicture String
 }
+
+model Pokemons {
+  id    String @id @default(cuid())
+  name  String @unique
+  image String
+  power Int
+}
