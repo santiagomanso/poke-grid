@@ -116,6 +116,7 @@ const Navbar = () => {
             {user.isSignedIn ? (
               <UserButton />
             ) : (
+              //buscar signIn componente atributo appereance
               <SignInButton mode="modal">
                 <div className="flex cursor-pointer items-center gap-1">
                   <FontAwesomeIcon
