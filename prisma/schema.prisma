@@ -11,13 +11,25 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Users {
+model User {
   id             String   @id @default(cuid())
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   email          String   @unique
   password       String
   profilePicture String
+  grid           Grid?
+}
+
+model Grid {
+  id           String @id @default(cuid())
+  residential1 Int    @default(0)
+  residential2 Int    @default(0)
+  offices1     Int    @default(0)
+  offices2     Int    @default(0)
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
 }
 
 model Pokemons {
